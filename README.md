@@ -7,6 +7,8 @@ Um projeto simples para registrar e acompanhar o tempo de estudo.
 - Adicionar o nome do estudo
 - Iniciar o cronômetro
 - Contar o tempo de estudo
+- Parar o cronômetro
+- Pausar o Cronômetro
 
 ## Tecnologias
 
@@ -24,8 +26,6 @@ Ao finalizar, clique em **Parar estudo**.
 
 ## Próximas funcionalidades
 
-- [ ] Parar o estudo
-- [ ] Pausar o estudo
 - [ ] Salvar histórico de estudos
 - [ ] Usar LocalStorage
 - [ ] Mostrar total de horas estudadas
