@@ -1,4 +1,4 @@
-# Study Tracker
+# Study Tracker - v0.1
 
 Um projeto simples para registrar e acompanhar o tempo de estudo.
 
@@ -9,6 +9,7 @@ Um projeto simples para registrar e acompanhar o tempo de estudo.
 - Contar o tempo de estudo
 - Parar o cronômetro
 - Pausar o Cronômetro
+- Finalizar estudo
 
 ## Tecnologias
 

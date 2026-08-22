@@ -1,21 +1,26 @@
 const titulo = document.querySelector("#titulo");
 const tempo = document.querySelector("#tempo");
 const iniciar = document.querySelector("#iniciar");
-const parar = document.querySelector("#parar");
 const pausar = document.querySelector("#pausar");
+const voltar = document.querySelector("#voltar");
+const finalizar = document.querySelector("#finalizar");
 const tema = document.querySelector("#tema");
 
 let intervalo;
 let segundos = 0;
 
+let estudando = false;
+
 function tempoestudo() {
         segundos ++;
 
+        estudando = true;
         tempo.value = segundos;
     }
 
-iniciar.addEventListener("click", () => {
+iniciar.addEventListener("click", IniciarEstudo);
 
+function IniciarEstudo() {
     if(titulo.value === "") {
         tema.innerText = "Digite o nome do estudo";
         return;
@@ -30,13 +35,15 @@ iniciar.addEventListener("click", () => {
     intervalo = setInterval(tempoestudo, 1000);
 
     iniciar.style.display = "none";
-    pausar.style.display = "none";
-    parar.style.display = "block";
-});
+    voltar.style.display = "none";
+    finalizar.style.display = "none";
+    pausar.style.display = "block";
+}
 
-parar.addEventListener("click", () => {
+pausar.addEventListener("click", PausarEstudo);
 
-    tema.innerText = "Tarefa parada";
+function PausarEstudo() {
+    tema.innerText = "Tarefa pausada";
 
     setTimeout(() => {
         tema.innerText = "";
@@ -44,14 +51,42 @@ parar.addEventListener("click", () => {
 
     clearInterval(intervalo);
 
-    pausar.style.display = "block";
-    parar.style.display = "none";
-});
+    voltar.style.display = "block";
+    finalizar.style.display = "block";
+    pausar.style.display = "none";
+}
 
-pausar.addEventListener("click", () => {
+voltar.addEventListener("click", VoltarEstudo);
 
+function VoltarEstudo() {
     intervalo = setInterval(tempoestudo, 1000);
 
-    pausar.style.display = "none";
-    parar.style.display = "block";
-});
+    voltar.style.display = "none";
+    finalizar.style.display = "none";
+    pausar.style.display = "block";
+}
+
+finalizar.addEventListener("click", FinalizarEstudo);
+
+function FinalizarEstudo() {
+    if(estudando === false) {
+        tema.innerText = "Nenhum estudo foi iniciado.";
+        return;
+    }
+
+    clearInterval(intervalo);
+
+    segundos = 0;
+    tempo.value = segundos;
+
+    estudando = false;
+    tema.innerText = "Seu estudo foi finalizado e registrado.";
+
+    setTimeout(() => {
+        tema.innerText = "";
+    }, 3000);
+
+    finalizar.style.display = "none";
+    voltar.style.display = "none";
+    iniciar.style.display = "block";
+}

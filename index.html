@@ -8,16 +8,19 @@
 </head>
 <body>
     <form class="inicio">
+        <h1 id="capa">Study Tracker</h1><br>
         <label for="titulo">Digite o nome do estudo:</label><br>
         <input type="text" name="ftext" id="titulo"><br>
-        <p id="tema"></p>
 
         <label for="ftime">Tempo estudado:</label><br>
         <input type="text" id="tempo" value="00:00" readonly><br>
         
         <input type="button" id="iniciar" value="Iniciar estudo">
-        <input type="button" id="parar" value="Parar estudo">
-        <input type="button" id="pausar" value="voltar estudo">
+        <input type="button" id="pausar" value="Pausar estudo">
+        <input type="button" id="finalizar" value="Finalizar estudo">
+        <input type="button" id="voltar" value="Voltar estudo"><br>
+
+        <p id="tema"></p>
     </form>
 
     <script src="script.js"></script>

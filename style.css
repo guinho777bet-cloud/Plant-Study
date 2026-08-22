@@ -1,7 +1,38 @@
-#parar {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio {
+    width: 300px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+
+    border: 1px solid rgb(2, 79, 23);
+    border-radius: 5px;
+}
+
+#finalizar {
     display: none;
 }
 
 #pausar {
+    display: none;
+}
+
+#voltar {
     display: none;
 }
